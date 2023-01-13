@@ -34,8 +34,19 @@ export default class EventService {
 
         //TODO
         let events = this.getEvents();
-        if(events.length!=0){
-            return events[0];
+        console.log("events => ", events);
+        if(events.length!==0){
+            let firstEvent = events[0];
+            console.log("firstEvent => ", firstEvent);
+
+            for(let event of events){
+                if(event.getStartTime()<firstEvent.getStartTime()){
+                    firstEvent = event;
+                    console.log("firstEvent => ", firstEvent);
+
+                }
+            }
+            return firstEvent;
         }else{
             return {};
         }
@@ -47,7 +58,24 @@ export default class EventService {
      * @return {null | Event}
      */
     getLastEvent() {
-        return null; //TODO
+        //TODO
+        let events = this.getEvents();
+        console.log("events => ", events);
+        if(events.length!==0){
+            let lastEvent = events[0];
+            console.log("lastEvent => ", lastEvent);
+
+            for(let event of events){
+                if(event.getStartTime()>lastEvent.getStartTime()){
+                    lastEvent = event;
+                    console.log("lastEvent => ", lastEvent);
+
+                }
+            }
+            return lastEvent;
+        }else{
+            return {};
+        }
     }
 
     /**

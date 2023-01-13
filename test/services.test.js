@@ -47,7 +47,7 @@ describe("Event Service",()=> {
     })
     test('getFirstEvent shall return the first event of fakeEvents', async () => {
         let eventService = new EventService(new EventRepository());
-        expect(eventService.getFirstEvent()).toBe(fakeEvents[0]);
+        expect(eventService.getFirstEvent()).toBe(fakeEvents[1]);
     })
 
     // 3 - getLastEvent en TDD
@@ -62,11 +62,11 @@ describe("Event Service",()=> {
     })
     test('getLastEvent shall return the first event of fakeEvents', async () => {
         let eventService = new EventService(new EventRepository());
-        expect(eventService.getLastEvent()).toBe(fakeEvents[fakeEvents.length-1]);
+        expect(eventService.getLastEvent()).toBe(fakeEvents[2]);
     })
-    test('getLastEvent shall return the first event of fakeEvents', async () => {
+    test('getLastEvent shall return the last event of fakeEvents', async () => {
         let eventService = new EventService(new EventRepository());
-        expect(eventService.getLastEvent().description).toBe("Unit test again");
+        expect(eventService.getLastEvent().title).toBe("Unit test again");
     })
 });
 
