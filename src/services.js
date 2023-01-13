@@ -31,7 +31,15 @@ export default class EventService {
      * @return {null | Event}
      */
     getFirstEvent() {
-        return null; //TODO
+
+        //TODO
+        let events = this.getEvents();
+        if(events.length!=0){
+            return events[0];
+        }else{
+            return {};
+        }
+        
     }
 
     /**
